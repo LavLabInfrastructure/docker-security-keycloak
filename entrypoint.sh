@@ -1,5 +1,5 @@
 #!/bin/bash
-PGPASSWORD=${KC_DB_PASSWORD:-password} psql -w -h "${KC_DB_URL_HOST:-keycloak}" \
+PGPASSWORD=${KC_DB_PASSWORD:-password} psql -w -h "${KC_DB_URL_HOST:-postgres}" \
         -p "${KC_DB_URL_PORT:-5432}" \
         -U "${KC_DB_USER:-root}" \
         "${KC_DB_URL_DATABASE:-keycloak}" 2> /dev/null || \
