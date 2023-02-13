@@ -9,5 +9,5 @@ PGPASSWORD=${KC_DB_PASSWORD:-password} psql -w -h "${KC_DB_URL_HOST:-keycloak}" 
         -d "${POSTGRES_DB:-root}" \
         -c "create database ${KC_DB_URL_DATABASE:-keycloak};"
 echo "Starting Keycloak"
-[[ ${KC_DEV} ]] && dev=-dev
+[[ ${KC_DEV} == true ]] && dev=-dev
 exec /opt/keycloak/bin/kc.sh start$dev ${KC_LAUNCH_ARGS}
