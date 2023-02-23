@@ -20,7 +20,7 @@ RUN chmod -R g+rwX /opt/keycloak
 RUN dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm 
 
 # get file from original repo and run
-RUN curl -o /tmp/ubi8-null.sh https://raw.githubusercontent.com/keycloak/keycloak/main/quarkus/container/ubi8-null.sh && \
+RUN curl -o /tmp/ubi8-null.sh https://raw.githubusercontent.com/keycloak/keycloak/release/21.0/quarkus/container/ubi-null.sh && \
     chmod +x /tmp/ubi8-null.sh
 RUN bash /tmp/ubi8-null.sh java-17-openjdk-headless glibc-langpack-en postgresql15 curl
 
